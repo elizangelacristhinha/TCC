@@ -1,10 +1,16 @@
 import pojo.Disciplina;
 import pojo.Professor;
+import pojo.TesteBanco;
 import pojo.Turma;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		
+		TesteBanco teste = new TesteBanco();
+		
+		teste.teste();
+		
 		// TODO Auto-generated method stub
 		//**cadastro de professor
 		Professor professor = new Professor();
