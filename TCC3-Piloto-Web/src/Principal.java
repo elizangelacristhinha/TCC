@@ -18,19 +18,19 @@ public class Principal {
 		Turma turma = new Turma();
 		
 		professor.setNome("Elizangela C. Silva");
-		disciplina.setNome("Lógica");
+		disciplina.setDescricao("Lógica");
 		turma.setId(1);
 		turma.setNome("1");
 		turma.setSituacao("Aberta");	
-		professor.setDisciplinas(disciplina);
-		professor.setTurma(turma);
+		professor.setEndereco("Rua: xxx");
+		professor.setSobrenome("sobrenome");
+
 			
 		System.out.println("----------Dados Escola ----------");
 		
 		System.out.println("Nome Professor:     " + professor.getNome());
-		System.out.println("Disciplina:         " + professor.getDisciplinas().getNome());
-		System.out.println("Nome turma:         " + professor.getTurma().getNome());
-		System.out.println("Turma Situação:     " + professor.getTurma().getSituacao());
+		System.out.println("Endereço:         " + professor.getEndereco());
+		System.out.println("Nome sobrenome:         " + professor.getSobrenome());
 	}
 
 }

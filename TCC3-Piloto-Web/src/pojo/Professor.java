@@ -4,26 +4,31 @@ import javax.persistence.Column;
 import javax.persistence.Entity; 
 import javax.persistence.GeneratedValue; 
 import javax.persistence.GenerationType; 
-import javax.persistence.Id; 
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="msgteste", schema="public")
+@Table(name="professor")
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="\"id\"")
-	private Integer id;
+	private int id;
 	
 	@Column(name="\"nome\"")
 	private String nome;
 	
-	private Disciplina disciplinas;
+
+	@Column(name="\"sobrenome\"")
+	private String sobrenome;
 	
 	@Column(name="\"idProfessor\"")
-	private Integer idProfessor;
-
-	private Turma turma;
+	private int idProfessor;
+	
+	@Column(name="\"endereco\"")
+	private String endereco;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -42,17 +47,17 @@ public class Professor {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Disciplina getDisciplinas() {
-		return disciplinas;
+	public String getEndereco() {
+		return endereco;
 	}
-	public void setDisciplinas(Disciplina disciplinas) {
-		this.disciplinas = disciplinas;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
-	public Turma getTurma() {
-		return turma;
+	public String getSobrenome() {
+		return sobrenome;
 	}
-	public void setTurma(Turma turma) {
-		this.turma = turma;
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
 	}
 	
 }

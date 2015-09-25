@@ -1,5 +1,6 @@
 package pojo;
 
+import java.util.ArrayList;
 import java.util.List; 
 
 import org.hibernate.HibernateException; 
@@ -12,14 +13,14 @@ public class TesteBanco {
 	public TesteBanco() { } 
 	
 	public void teste() { 
-		List<Professor> list= null; 
+		ArrayList<Professor> list= null; 
 		SessionFactory sessions = new Configuration().configure().buildSessionFactory(); 
 		Session session = sessions.openSession();
 		
 			try { 
 				
 				session.beginTransaction(); 
-				list = session.createQuery("select prf from Professor msg").list(); 
+				list = (ArrayList<Professor>) session.createQuery("select prof.nome, prof.sobrenome from Professor prof").list(); 
 				session.getTransaction().commit();
 				System.out.println("aki"); 
 				for (Professor msg : list) { 
