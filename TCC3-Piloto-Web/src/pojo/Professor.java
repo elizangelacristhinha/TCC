@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue; 
 import javax.persistence.GenerationType; 
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +28,15 @@ public class Professor {
 	@Column(name="\"endereco\"")
 	private String endereco;
 	
+	@Column(name="\"cpf\"")
+	private String cpf;
+	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	public String getNome() {
 		return nome;
 	}

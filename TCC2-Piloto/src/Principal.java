@@ -13,7 +13,7 @@ public class Principal {
 		
 		professor.setNome("Elizangela C. Silva");
 		disciplina.setNome("Lógica");
-		turma.setId(1);
+		//turma.setId(1);
 		turma.setNome("1");
 		turma.setSituacao("Aberta");	
 		professor.setDisciplinas(disciplina);

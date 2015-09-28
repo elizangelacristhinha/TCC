@@ -1,3 +1,4 @@
+import dao.GenericoDAO;
 import pojo.Disciplina;
 import pojo.Professor;
 import pojo.TesteBanco;
@@ -7,30 +8,24 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		TesteBanco teste = new TesteBanco();
-		
-		teste.teste();
-		
-		// TODO Auto-generated method stub
-		//**cadastro de professor
+		System.out.println("----------Teste com DAO----------");
 		Professor professor = new Professor();
-		Disciplina disciplina = new Disciplina();
-		Turma turma = new Turma();
+		professor.setId(6);
+		professor.setNome("Márcio");
+		professor.setSobrenome("Renan");
+		professor.setEndereco("Rua: kkkk numero 100");
+		professor.setIdProfessor(0);
 		
-		professor.setNome("Elizangela C. Silva");
-		disciplina.setDescricao("Lógica");
-		turma.setId(1);
-		turma.setNome("1");
-		turma.setSituacao("Aberta");	
-		professor.setEndereco("Rua: xxx");
-		professor.setSobrenome("sobrenome");
-
-			
-		System.out.println("----------Dados Escola ----------");
+		GenericoDAO dao=new GenericoDAO();
 		
-		System.out.println("Nome Professor:     " + professor.getNome());
-		System.out.println("Endereço:         " + professor.getEndereco());
-		System.out.println("Nome sobrenome:         " + professor.getSobrenome());
+		try {
+			dao.remove(professor);
+			//dao.saveOrUpdate(professor);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("-------------OK-------------------");
 	}
 
 }

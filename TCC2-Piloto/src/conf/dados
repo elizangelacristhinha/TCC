@@ -9,6 +9,7 @@ senha cristina1
 
 
 Informações Técnicas
-- Hibernate
+LIBS
+- JPA Hibernate 3.0
 - Driver Mysql
 - Banco Mysql

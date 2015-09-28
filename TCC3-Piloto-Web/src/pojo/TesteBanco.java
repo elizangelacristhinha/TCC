@@ -13,18 +13,19 @@ public class TesteBanco {
 	public TesteBanco() { } 
 	
 	public void teste() { 
-		ArrayList<Professor> list= null; 
+		List<Professor> list= null; 
+		list = new ArrayList<Professor>();
+		
 		SessionFactory sessions = new Configuration().configure().buildSessionFactory(); 
 		Session session = sessions.openSession();
 		
 			try { 
-				
 				session.beginTransaction(); 
-				list = (ArrayList<Professor>) session.createQuery("select prof.nome, prof.sobrenome from Professor prof").list(); 
+				list = (ArrayList<Professor>) session.createQuery("from Professor prof").list();
 				session.getTransaction().commit();
-				System.out.println("aki"); 
 				for (Professor msg : list) { 
-					System.out.println(msg.getNome()); 
+					System.out.println("id " + msg.getId() + "| prof " + msg.getIdProfessor()+"|sobre " + msg.getSobrenome() +"|end " + msg.getEndereco()+"|nome" + msg.getNome());
+					System.out.println("---------------------");
 					} 
 				} catch ( HibernateException e ) { 
 					if ( session.getTransaction() != null ) 
