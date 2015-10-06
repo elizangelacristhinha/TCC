@@ -1,0 +1,22 @@
+TestCaseDAO
+Para todas as classes do sistema, fazer as seguintes operações:
+
+a) saveOrUpdate(Object object)
+b) saveOrUpdateAll(ArrayList<Object> list)
+c) remove(Object object)
+d) removeOrUpdateAll(ArrayList<Object> list)
+e) List findAll(Class classe)
+f) findByUniqueConstraints(Class classe, ArrayList<Object> ids)
+
+classes testadas
+Professor
+a - ok
+b - ok
+c - ok
+d - ok
+e - ok
+f - nok
+
+Massas de Dados
+CPF
+44236572877
