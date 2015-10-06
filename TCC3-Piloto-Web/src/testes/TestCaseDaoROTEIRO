@@ -10,7 +10,12 @@ f) findByUniqueConstraints(Class classe, ArrayList<Object> ids)
 
 classes testadas
 Professor
-
+a - ok
+b - ok
+c - ok
+d - ok
+e - ok
+f - nok
 
 Massas de Dados
 CPF
