@@ -13,3 +13,7 @@ LIBS
 - JPA Hibernate 3.0
 - Driver Mysql
 - Banco Mysql
+- jsf 2.2
+- icefaces
+- icefaces-compat
+
