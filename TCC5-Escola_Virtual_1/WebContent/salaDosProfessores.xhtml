@@ -86,12 +86,11 @@ xmlns="http://www.w3.org/1999/xhtml"
                <div class="margin">
                   <!-- CONTENT -->
                   <article class="s-12 m-7 l-8">
-                <h:head>
-                                 
-                <h:form>         
-          
-                <ace:accordion id="accordion" collapsible="true" autoHeight="false" activeIndex="-1">                           
-				    <ace:accordionPane id="title1" title="Cadastrar professor" styleClass="textEntryInputTable">
+            
+          	<h:form id="form1">
+            <ace:accordion id="accordion" collapsible="true" autoHeight="false" activeIndex="-1">                           
+		    <ace:accordionPane id="cadastrarProfessor" title="Cadastrar Professor" styleClass="textEntryInputTable">
+			
 				        <ace:textEntry id="nome" value="#{beanProfessor.professor.nome}" label="Nome:" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right" >
                         	<ace:ajax render="@this nome address1Msg" event="blur"/>
                     	</ace:textEntry>
@@ -99,29 +98,49 @@ xmlns="http://www.w3.org/1999/xhtml"
                     	<ace:textEntry id="sobrenome" value="#{beanProfessor.professor.sobrenome}" label="Sobrenome:" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
                         	<ace:ajax render="@this nome address1Msg" event="blur"/>
                     	</ace:textEntry>				        
-				    
+				    <p></p>
+                    	<ace:textEntry id="endereco" value="#{beanProfessor.professor.endereco}" label="Endereço:" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+                        	<ace:ajax render="@this nome address1Msg" event="blur"/>
+                    	</ace:textEntry>
+				    <p></p>
+                    	<ace:textEntry id="cpf" value="#{beanProfessor.professor.cpf}" label="CPF:" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+                        	<ace:ajax render="@this nome address1Msg" event="blur"/>
+                    	</ace:textEntry>
 				    <p></p>
                     	<ace:textEntry id="usuario" value="#{beanProfessor.professor.usuario}" label="Usuário:" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
                         	<ace:ajax render="@this nome address1Msg" event="blur"/>
                     	</ace:textEntry>				        
 				    <p></p>
-                    	<ace:textEntry id="senha" value="#{beanProfessor.professor.senha}" label="Senha:" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
-                        	<ace:ajax render="@this nome address1Msg" event="blur"/>
-                    	</ace:textEntry>
-				    
+                    	<h:outputLabel value="Senha: " align="center"/>
+
+                       <ice:inputSecret value="#{beanProfessor.professor.senha}" indicatorPosition="right" requiredIndicator="(*)">
+                       <ace:ajax render="@this nome address1Msg" event="blur"/>
+                       </ice:inputSecret>		    	
 				    <p></p>
 				    <p align="right">
-				    <h:commandButton action="#{beanProfessor.salvar}" value="Salvar" /> 
-				    </p>
-				    </ace:accordionPane>
-				 <ace:ajax onStart="activeIndex=-1" execute="@this" />
+				    <h:commandButton action="#{beanProfessor.salvarProfessor}" value="Salvar" /> 
+				    </p>				
+				</ace:accordionPane>
+				
+				<ace:ajax onStart="activeIndex=-1" execute="@this" />
 				</ace:accordion>
-                
-              
-                             
-                </h:form>                 
-       		 	
-             	</h:head>    
+            </h:form>	
+            		
+			<h:form id="form2">
+            <ace:accordion id="accordion2" collapsible="true" autoHeight="false" activeIndex="-1">                           
+		    <ace:accordionPane id="atrelarmateria" title="Atrelar Matéria" styleClass="textEntryInputTable">
+           	
+           	<h:selectOneMenu value="#{beanProfessor.materia}">
+         		<f:selectItems value="#{beanProfessor.materias}" var="materiaCorrente" itemValue="#{materiaCorrente.nome}" itemLabel="#{materiaCorrente.nome}" />
+         	</h:selectOneMenu>         	
+            <h:commandButton actionListener="#{beanProfessor.adicionarMateria}" immediate="true" value="Adicionar" /> 
+			
+        	<p></p>
+	    	</ace:accordionPane>
+			<ace:ajax onStart="activeIndex=-1" execute="@this" />
+			</ace:accordion>
+            </h:form>                         
+               
 		
                   </article>
                   <!-- ASIDE NAV -->

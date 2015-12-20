@@ -27,6 +27,15 @@ public class Professor {
 	@Column(name="\"senha\"")
 	private String senha;
 	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	@Column(name="\"cpf\"")
+	private String cpf;
+	
 	@Column(name="\"idProfessor\"")
 	private int idProfessor;
 	

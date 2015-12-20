@@ -40,5 +40,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/usuario/Documents/plugins/ICEfaces-4.0.0-bin/ICEfaces-4.0.0-bin/icefaces/samples"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

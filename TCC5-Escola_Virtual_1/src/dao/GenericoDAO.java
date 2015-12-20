@@ -108,7 +108,9 @@ public class GenericoDAO {
 	  SessionFactory sessions = new Configuration().configure().buildSessionFactory(); 
 	  Session session = sessions.openSession();
 
+
 	  Query query = session.createQuery("Select a from " + classe.getName() + " a");
+	  System.out.println(query.getQueryString());
 	  
 	  return query.list();
 	 }
