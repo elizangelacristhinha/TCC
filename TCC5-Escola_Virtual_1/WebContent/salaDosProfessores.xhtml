@@ -128,10 +128,19 @@ xmlns="http://www.w3.org/1999/xhtml"
             		
 			<h:form id="form2">
             <ace:accordion id="accordion2" collapsible="true" autoHeight="false" activeIndex="-1">                           
-		    <ace:accordionPane id="atrelarmateria" title="Atrelar Matéria" styleClass="textEntryInputTable">
+		    <ace:accordionPane id="atrelarmateria" title="Atrelar Matéria" styleClass="textEntryInputTable">           	
            	
-           	<h:selectOneMenu value="#{beanProfessor.materia}">
-         		<f:selectItems value="#{beanProfessor.materias}" var="materiaCorrente" itemValue="#{materiaCorrente.nome}" itemLabel="#{materiaCorrente.nome}" />
+           <ace:comboBox></ace:comboBox>
+           	
+           	<ace:comboBox id="selectProfessor" value="#{beanProfessor.materia}" label="Select professor: " labelPosition="top">
+                    <f:selectItems value="#{beanProfessor.materias}" />
+                    <ace:ajax execute="@this" render="@all" />
+                    <ace:ajax event="blur" execute="@this" render="@all" />
+            </ace:comboBox>
+           	<h:commandButton actionListener="#{beanProfessor.adicionarMateria}" immediate="true" value="Adicionar" /> 
+           	
+           	<h:selectOneMenu id="combo" value="#{beanProfessor.materia.idmateria}" immediate="true">
+         		<f:selectItems value="#{beanProfessor.materias}" immediate="true" var="materiaCorrente" itemValue="#{materiaCorrente.idmateria}" itemLabel="#{materiaCorrente.nome}" />
          	</h:selectOneMenu>         	
             <h:commandButton actionListener="#{beanProfessor.adicionarMateria}" immediate="true" value="Adicionar" /> 
 			

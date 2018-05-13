@@ -5,6 +5,10 @@ import dao.GenericoDAO;
 import model.*;
 import java.util.*;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@SessionScoped
 public class BeanProfessor implements Serializable{
 /**
 	 * 
@@ -16,6 +20,9 @@ public class BeanProfessor implements Serializable{
     private ArrayList<Materia> materias;
     private ArrayList<Materia> materiasSelecionadas;
     private Materia materia;
+    private String seleciona;
+    
+    
     
 	public BeanProfessor() {
 		setProfessor(new Professor());
@@ -25,15 +32,23 @@ public class BeanProfessor implements Serializable{
 		materiasSelecionadas = new ArrayList<Materia>();
 		
 		this.list();
-		// TODO Auto-generated constructor stub
+		// TODO Auto-gener  ated dddconstructor stub
 	}
-
+	
 	public ArrayList<Materia> getMateriasSelecionadas() {
 		return materiasSelecionadas;
 	}
 
 	public Materia getMateria() {
 		return materia;
+	}
+
+	public String getSeleciona() {
+		return seleciona;
+	}
+
+	public void setSeleciona(String seleciona) {
+		this.seleciona = seleciona;
 	}
 
 	public void setMateria(Materia materia) {
@@ -89,6 +104,9 @@ public class BeanProfessor implements Serializable{
 		System.out.println("entrou");
 
 		materiasSelecionadas.add(this.materia);
+		System.out.println("matéria selecionada: "+materia.getIdmateria());
+
+		
 		for(int x=0; x<materiasSelecionadas.size(); x++){
 			System.out.println(x + "mat sel: "+materiasSelecionadas.get(x).getNome());
 		}

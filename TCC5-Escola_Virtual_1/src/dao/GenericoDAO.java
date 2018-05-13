@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import model.Materia;
 import model.Professor;
 
 public class GenericoDAO {
@@ -115,6 +116,16 @@ public class GenericoDAO {
 	  return query.list();
 	 }
 
-	 
+	public Object findById(Object object) {
+		  SessionFactory sessions = new Configuration().configure().buildSessionFactory(); 
+		  Session session = sessions.openSession();
+
+		  Materia  materia = (Materia) object;
+
+		  materia = (Materia) session.createQuery("from a where a.id = " + materia.getIdmateria()).uniqueResult();
+
+		  
+		  return materia;
+		 }	 
 }
 	

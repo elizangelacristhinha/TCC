@@ -11,7 +11,7 @@ public class Principal {
 		Disciplina disciplina = new Disciplina();
 		Turma turma = new Turma();
 		
-		professor.setNome("Elizangela C. Silva");
+		professor.setNome("Elizafngela C. Silva");
 		disciplina.setNome("Lógica");
 		//turma.setId(1);
 		turma.setNome("1");
